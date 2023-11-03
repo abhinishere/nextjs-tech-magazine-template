@@ -1,0 +1,15 @@
+.FooterContainer {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -5rem;
+  /* with spacer */
+  display: flex;
+  flex-direction: column;
+}
+
+.FooterContainer .spacer {
+  height: 5rem;
+  margin: 0 0 -5rem 0;
+  background-color: transparent;
+}

@@ -1,0 +1,51 @@
+.ErrorMessage {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ArticleTopics {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.ArticleTopic {
+  cursor: pointer;
+  color: var(--primary-600);
+}
+
+.ArticleTopic:hover {
+  color: var(--primary);
+}
+
+.ArticleTitle {
+  font-weight: 600 !important;
+  font-family: "Encode Sans Semi Condensed", sans-serif !important;
+}
+
+.ArticleSubtitle {
+  color: var(--primary-600) !important;
+  font-size: 1.2rem;
+}
+
+.Byline {
+  color: var(--primary-600) !important;
+  font-weight: 500;
+}
+
+.ArticleBody {
+  font-size: 1.2rem;
+}

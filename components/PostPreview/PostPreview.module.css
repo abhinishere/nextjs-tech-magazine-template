@@ -1,0 +1,47 @@
+.PostPreviewContainer {
+  cursor: pointer;
+  border-radius: 2rem;
+  overflow: hidden;
+  width: min-content;
+  height: min-content;
+}
+
+.PostPreviewContainer:hover {
+  background-color: var(--primary-100);
+}
+
+.Image {
+  border-radius: 2rem;
+}
+
+.ArticleTextInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 0.5rem;
+}
+
+.Topics {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.Topic {
+  color: var(--primary-600);
+}
+
+.Topic:hover {
+  color: var(--primary);
+}
+
+.Title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-family: "Encode Sans Semi Condensed", sans-serif !important;
+}
+
+.Date {
+  color: var(--primary-600);
+  font-weight: 500;
+}
