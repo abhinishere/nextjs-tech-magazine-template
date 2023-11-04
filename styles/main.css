@@ -68,13 +68,14 @@ body {
 
 body {
   position: relative;
-  width: 75%;
   margin: auto;
   min-height: 100vh;
 }
 
 .content {
   padding-top: 3rem;
+  width: 75%;
+  margin: 0 auto;
 }
 
 h1 {

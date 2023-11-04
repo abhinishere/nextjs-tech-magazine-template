@@ -1,29 +1,24 @@
 .Navbar {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
-  font-size: 1.15rem;
-  font-weight: 500;
-  gap: 0.5rem;
+  background-color: var(--secondary);
+  opacity: 95%;
 }
 
-.NavHeader {
+.NavbarHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-weight: 500;
+  width: 75%;
+  margin: 1rem auto 0.15rem auto;
+  /* gap: 0.5rem; */
 }
 
 .NavHeaderIconsLeft {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-}
-
-.NavMenu {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
 }
 
 .IconWrapper {
@@ -34,22 +29,4 @@
 
 .IconWrapper:hover {
   background-color: var(--primary-100);
-}
-
-.InactiveLinkWrapper {
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
-}
-
-.InactiveLinkWrapper:hover {
-  background-color: var(--primary-100);
-}
-
-.ActiveLinkWrapper {
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  background-color: var(--primary);
-  color: var(--secondary) !important;
 }

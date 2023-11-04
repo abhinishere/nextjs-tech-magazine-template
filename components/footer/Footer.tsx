@@ -13,6 +13,14 @@ function Footer() {
         &copy; <span>{getYear()}</span>{" "}
         <Link style={{ color: "inherit" }} href="/">
           {siteInfo.title}
+        </Link>{" "}
+        •{" "}
+        <Link
+          target="_blank"
+          style={{ color: "inherit" }}
+          href="https://github.com/abhinishere/nextjs-tech-magazine-template"
+        >
+          GitHub
         </Link>
       </div>
       <div className={styles.spacer}></div>

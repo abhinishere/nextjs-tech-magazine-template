@@ -18,7 +18,8 @@
     "nextjs-toploader": "^1.6.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-markdown": "^9.0.0"
+    "react-markdown": "^9.0.0",
+    "react-show-hide-sticky-navbar": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
