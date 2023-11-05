@@ -27,13 +27,15 @@ function PostPreview(props: Post) {
       // href={props.url}
       className={styles.PostPreviewContainer}
     >
-      <Image
-        className={styles.Image}
-        src={props.featured_image}
-        alt=""
-        width="350"
-        height="200"
-      />
+      <div className={styles.ImageWrapper}>
+        <Image
+          className={styles.Image}
+          src={props.featured_image}
+          alt=""
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
       <div className={styles.ArticleTextInfo}>
         <div className={styles.Topics}>
           {props.topics.map((topic) => (

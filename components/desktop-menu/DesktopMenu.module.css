@@ -8,6 +8,12 @@
   font-weight: 500;
 }
 
+@media (width <= 768px) {
+  .DesktopMenu {
+    display: none;
+  }
+}
+
 .InactiveLinkWrapper {
   padding: 0.75rem;
   border-radius: 0.75rem;

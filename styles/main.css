@@ -75,6 +75,7 @@ body {
 .content {
   padding-top: 3rem;
   width: 75%;
+  overflow: hidden;
   margin: 0 auto;
 }
 
@@ -97,6 +98,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin: 0 auto;
 }
 
 .IconWrapper {
@@ -107,4 +109,30 @@ hr {
 
 .IconWrapper:hover {
   background-color: var(--primary-100);
+}
+
+/* xl min width 1280px */
+@media (width <=1280px) {
+  .content {
+    width: 90%;
+  }
+}
+
+/* lg min width 1024px */
+@media (width <=1024px) {
+  .ListPosts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* md min width 768px */
+/* @media (width <=768px) {
+} */
+
+/* phones sm min width 640px */
+@media (width <=640px) {
+  .ListPosts {
+    grid-template-columns: repeat(1, 1fr);
+    width: 75%;
+  }
 }
