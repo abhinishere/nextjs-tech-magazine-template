@@ -33,6 +33,8 @@ function PostPreview(props: Post) {
           src={props.featured_image}
           alt=""
           fill
+          sizes="100%"
+          priority
           style={{ objectFit: "cover" }}
         />
       </div>

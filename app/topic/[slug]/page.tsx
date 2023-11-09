@@ -13,7 +13,6 @@ function Topic() {
   const topicName = pathname.replace("/topic/", "").toLowerCase();
 
   // get posts specific to topic in question
-  var matchedPosts = [];
   const posts = allPosts
     .filter((post) => {
       // convert topics array to lowercase to search for matches
@@ -22,7 +21,7 @@ function Topic() {
     })
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
-  // generate previews of latest posts
+  // generate previews of posts
   const postPreviews = posts.map((post: any, idx: any) => (
     <PostPreview key={idx} {...post} />
   ));

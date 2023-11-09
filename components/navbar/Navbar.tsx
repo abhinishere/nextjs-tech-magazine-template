@@ -1,9 +1,14 @@
 "use client";
 
 import styles from "./Navbar.module.css";
-import { IconSearch, IconMoonFilled, IconMenuDeep } from "@tabler/icons-react";
+import {
+  IconSearch,
+  IconMoonFilled,
+  IconMenuDeep,
+  IconX,
+} from "@tabler/icons-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { menuItems, siteInfo } from "@/lib/data";
 import ThemeButton from "../theme-button/ThemeButton";
 import { NavbarWrapper } from "react-show-hide-sticky-navbar";
@@ -14,6 +19,8 @@ import React, { useRef, useEffect } from "react";
 function Navbar() {
   // update state when menu opens
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const router = useRouter();
 
   function handleMenuOpen() {
     setMenuOpen(!menuOpen);
@@ -51,37 +58,78 @@ function Navbar() {
     return <div ref={wrapperRef}>{props.children}</div>;
   }
 
+  // update state when search opens
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const handleSearchClick = () => {
+    setSearchOpen(!searchOpen);
+  };
+
+  function handleSearchSubmit(e: any) {
+    e.preventDefault();
+    const searchKeyword = e.target.searchKeyword.value;
+    router.push(`/search/${searchKeyword}`);
+    setSearchOpen(false);
+  }
+
   return (
     <NavbarWrapper>
-      <nav className={styles.Navbar}>
-        <div className={styles.NavbarHeader}>
-          <div className={styles.NavHeaderIconsLeft}>
-            {menuOpen && (
-              <div className={styles.DropdownMenu}>
-                <OutsideAlerter>
-                  {menuItems.map((item) => (
-                    <span className={`${styles.Options}`}>
-                      <div className={styles.OptionWrapper}>{item.title}</div>
-                    </span>
-                  ))}
-                </OutsideAlerter>
-              </div>
-            )}
-            <div onClick={handleMenuOpen} className={styles.IconWrapper}>
-              <IconMenuDeep size={20} style={{ transform: "rotate(180deg)" }} />
+      <nav style={{ height: "70px" }} className={styles.Navbar}>
+        {searchOpen ? (
+          <div className={styles.NavSearchContainer}>
+            <IconSearch className={styles.StartingIcon} />
+            <form
+              onSubmit={handleSearchSubmit}
+              className={styles.NavSearchForm}
+            >
+              <input
+                className={styles.NavSearchInput}
+                type="text"
+                name="searchKeyword"
+                placeholder="Search"
+                required
+              />
+            </form>
+            <div
+              onClick={handleSearchClick}
+              className={styles.TrailingIconWrapper}
+            >
+              <IconX className={styles.TrailingIcon} />
             </div>
-            <ThemeButton />
           </div>
-          <Link
-            style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/"
-          >
-            <h1>{siteInfo.title}</h1>
-          </Link>
-          <div className={styles.IconWrapper}>
-            <IconSearch size={20} />
+        ) : (
+          <div className={styles.NavbarHeader}>
+            <div className={styles.NavHeaderIconsLeft}>
+              {menuOpen && (
+                <div className={styles.DropdownMenu}>
+                  <OutsideAlerter>
+                    {menuItems.map((item) => (
+                      <span className={`${styles.Options}`}>
+                        <div className={styles.OptionWrapper}>{item.title}</div>
+                      </span>
+                    ))}
+                  </OutsideAlerter>
+                </div>
+              )}
+              <div onClick={handleMenuOpen} className={styles.IconWrapper}>
+                <IconMenuDeep
+                  size={20}
+                  style={{ transform: "rotate(180deg)" }}
+                />
+              </div>
+              <ThemeButton />
+            </div>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              href="/"
+            >
+              <h1>{siteInfo.title}</h1>
+            </Link>
+            <div onClick={handleSearchClick} className={styles.IconWrapper}>
+              <IconSearch size={20} />
+            </div>
           </div>
-        </div>
+        )}
         <hr></hr>
       </nav>
     </NavbarWrapper>

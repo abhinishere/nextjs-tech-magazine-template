@@ -12,13 +12,18 @@
   font-weight: 500;
   width: 75%;
   margin: 1rem auto 0.15rem auto;
+  height: 100%;
   /* gap: 0.5rem; */
 }
 
 /* xl min width 1280px */
 @media (width <=1280px) {
   .NavbarHeader {
-    width: 90%;
+    width: 90% !important;
+  }
+
+  .NavSearchContainer {
+    width: 90% !important;
   }
 }
 
@@ -66,4 +71,59 @@
 .OptionWrapper:hover {
   color: var(--primary);
   background-color: var(--primary-100);
+}
+
+.NavSearchForm {
+  height: 100%;
+  width: 100%;
+}
+
+.NavSearchInput {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-100);
+  font-size: 1.15rem;
+  color: var(--primary);
+  padding: 0 3rem;
+}
+
+.NavSearchInput:focus {
+  outline: none;
+}
+
+.NavSearch::placeholder {
+  color: var(--primary-600);
+  font-size: 1.15rem;
+}
+
+.NavSearchContainer {
+  position: relative;
+  height: 100%;
+  width: 75%;
+  margin: auto;
+  color: var(--primary);
+}
+
+.StartingIcon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+.TrailingIconWrapper {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.TrailingIconWrapper:hover {
+  background-color: var(--primary-300);
+  border-radius: 0.75rem;
 }
