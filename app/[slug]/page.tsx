@@ -25,7 +25,7 @@ function PostPage({ params }: { params: { slug: string } }) {
       <div className={styles.ErrorMessage}>
         <h1>Page not found</h1>
         <p>
-          Let's go to the <Link href="/">homepage</Link> instead.
+          Let&apos;s go to the <Link href="/">homepage</Link> instead.
         </p>
       </div>
     );

@@ -104,7 +104,7 @@ function Navbar() {
                 <div className={styles.DropdownMenu}>
                   <OutsideAlerter>
                     {menuItems.map((item) => (
-                      <span className={`${styles.Options}`}>
+                      <span key={item.href} className={`${styles.Options}`}>
                         <div className={styles.OptionWrapper}>{item.title}</div>
                       </span>
                     ))}

@@ -6,7 +6,7 @@ interface Props {
   children: string;
 }
 const MarkdownWrapper = ({ children }: Props) => {
-  return <Markdown className={styles.MarkdownWrapper} children={children} />;
+  return <Markdown className={styles.MarkdownWrapper}>{children}</Markdown>;
 };
 
 export default MarkdownWrapper;

@@ -25,7 +25,7 @@ function Search() {
   ));
   return (
     <div className={styles.SearchPageContainer}>
-      <h1>Search Results for "{decodedKeyword}"</h1>
+      <h1>Search Results for &quot;{decodedKeyword}&quot;</h1>
       <div className="ListPosts">{postPreviews}</div>
     </div>
   );
